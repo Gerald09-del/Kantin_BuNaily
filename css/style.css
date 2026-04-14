@@ -1,0 +1,392 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #87CEEB, #FFD700, #1e90ff, #FFFACD);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    text-align: center;
+    margin: 1rem;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.detail {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.detail:hover {
+    background-color: #007B9A;
+}
+
+.back {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.back:hover {
+    background-color: #d32f2f;
+}
+
+/* Mitra List - Elegant White Cards */
+.mitra-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.mitra-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 420px;
+    min-height: 300px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.5);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.mitra-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800);
+}
+
+.mitra-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.8);
+}
+
+.mitra-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.mitra-card h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin: 0 0 20px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.mitra-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mitra-info p {
+    font-size: 1.3rem;
+    color: #34495e;
+    margin: 0;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    border-left: 5px solid #3498db;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.mitra-kategori {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    border-left-color: #764ba2 !important;
+    font-weight: 600;
+}
+
+.mitra-detail-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mitra-detail-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Mitra Detail Modal */
+.mitra-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.mitra-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mitra-modal-content {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 25px;
+    padding: 60px 50px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    position: relative;
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mitra-modal.active .mitra-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.mitra-modal h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+}
+
+.mitra-modal p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    border-left: 6px solid #27ae60;
+}
+
+.mitra-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #7f8c8d;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.mitra-modal-close:hover {
+    background: rgba(127,140,141,0.2);
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mitra-card {
+        width: 95%;
+        padding: 30px 25px;
+    }
+    
+    .mitra-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .mitra-info p {
+        font-size: 1.1rem;
+    }
+    
+    .mitra-modal-content {
+        padding: 40px 30px;
+        margin: 20px;
+    }
+    
+    .mitra-modal h2 {
+        font-size: 2rem;
+    }
+    
+    .mitra-modal p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Product cards */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    margin: 5px 0;
+}
+
+/* Background elements */
+.bg-element {
+    position: absolute;
+    font-size: 4rem;
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    25% {
+        transform: translateY(75vh) rotate(90deg);
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg);
+    }
+    75% {
+        transform: translateY(25vh) rotate(270deg);
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+    }
+}
+
+.bg-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+.bg-element:nth-child(2) { left: 20%; animation-delay: 5s; }
+.bg-element:nth-child(3) { left: 30%; animation-delay: 10s; }
+.bg-element:nth-child(4) { left: 40%; animation-delay: 15s; }
+.bg-element:nth-child(5) { left: 50%; animation-delay: 2s; }
+.bg-element:nth-child(6) { left: 60%; animation-delay: 7s; }
+.bg-element:nth-child(7) { left: 70%; animation-delay: 12s; }
+.bg-element:nth-child(8) { left: 80%; animation-delay: 17s; }

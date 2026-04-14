@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             productData = await productResponse.json();
         } catch (error) {
             console.log('Fallback to hardcoded data (file:// protocol limitation)');
-            mitraData = [{"mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_mitra":"bu Naily","owner_name":"Naily","email":"nailimasudah74@gmail.com","alamat":"Jl. Margorejo, 3D/82, Surabaya, Jawa Timur","kategori":"Food and Beverages","sekolah":"SMA Hang Tuah 2 Sidoarjo"}];
-            productData = [{"product_id":"17b96491-3167-43c1-8f1e-725b4a85ca0d","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" good day frezz","harga":"6.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1T81WCgV6Ou2cmWptsm5uIu9YHgn37UrC","sekolah":"SMA HANG TUAH 2"}];
         }
     }
 

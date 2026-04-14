@@ -1,0 +1,131 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const viewMitraBtn = document.getElementById('viewMitra');
+    const viewProductsBtn = document.getElementById('viewProducts');
+    const content = document.getElementById('content');
+
+    const mitraData = [{"mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_mitra":"bu Naily","owner_name":"Naily","email":"nailimasudah74@gmail.com","alamat":"Jl. Margorejo, 3D/82, Surabaya, Jawa Timur","kategori":"Food and Beverages","sekolah":"SMA Hang Tuah 2 Sidoarjo"}];
+
+    const productData = [{"product_id":"17b96491-3167-43c1-8f1e-725b4a85ca0d","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" good day frezz","harga":"6.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1T81WCgV6Ou2cmWptsm5uIu9YHgn37UrC","sekolah":"SMA HANG TUAH 2"},{"product_id":"19f806c1-cce1-4b28-8a75-18ef8d29cb50","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"pop ice popcorn caramel ","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1QXbFtowuaTvrMdt9U7iIbzqLB90uHUMA","sekolah":"SMA HANG TUAH 2"},{"product_id":"563e3390-eafe-4d60-a34b-6df361043b0e","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie selection","harga":"8000","stok":"8","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1tiKV4TFL2y4jDPubYvONCnaxWrZmJKp8","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"6922f8a2-f458-45bd-9d5d-6b6ad85cf09b","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" pop ice es teler","harga":"4.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1ElVKA0RADRqP8PFil8TRVOrXBzOm7CWL","sekolah":"SMA HANG TUAH 2"},{"product_id":"711a2e32-3643-4c87-add8-2d6c8225601b","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"segarsari susu soda","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1aPo_ysUYnos1XthNjZZXEqvFbSIK6LlU","sekolah":"SMA HANG TUAH 2"},{"product_id":"7c50bba3-f5df-44bb-8090-d5fb26136f29","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie soto","harga":"8000","stok":"10","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1zRK9zI7s1fGQ2N2cSkcrc91Hm5MNICDu","sekolah":"SMA HANG TUAH 2"},{"product_id":"89a197e7-0ccb-47c5-8c01-5b10bae37105","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"Hilo calsium choco malt","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1r3rN_TG9rezz8xUCKFy-VGwVmqtL0aXf","sekolah":"SMA HANG TUAH 2"},{"product_id":"89a85ecf-07ff-4146-994b-0a4f750b23ae","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie ayam bawang","harga":"8000","stok":"7","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1m8vFkVsAcAIYbcXE3nHzSD2dbMjE-ycK","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"8e661855-a982-4411-9e8f-aac2d725c627","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" nutrisi milky orange","harga":"4.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1qP5rqYh7bCa_6M4E_e5tODUKObZLIum3","sekolah":"SMA HANG TUAH 2"},{"product_id":"8f3dd465-bbe3-4870-a0e5-fd0a6f98577b","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie spicy ramyeon","harga":"8000","stok":"9","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1l93KzQsaCoglGWAnwQ6t_IvM2h8GQskY","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"8f58ecc5-3a70-403c-8de9-3f25c3883e23","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" chocolatos coklat ","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1o-wyKtPgSrILwBH9Pkx76UmeTRoktR03","sekolah":"SMA HANG TUAH 2"},{"product_id":"9ff1d3af-0a43-46d8-bfb6-0bf20bbd60da","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie tori miso","harga":"8000","stok":"12","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1HPjBQ-QVz-i9jeRmvpPQ9-m_mqSPcFNF","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"a379f7d5-06c9-4e9e-af16-b5fc2ee6db8b","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"TEAJUS MELATI","harga":"4.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1Yybs-8F46PHS7f06W-8ITWyluF7ipszZ","sekolah":"SMA HANG TUAH 2"},{"product_id":"a42f032d-afc9-4ea9-b0a8-2b3522e388ee","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"Nescafe classic ","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=168ggIrldLuJgj86jbLaEmVi8vS5nWow4","sekolah":"SMA HANG TUAH 2"},{"product_id":"aef23cf3-8073-47e6-8628-b31b8916c438","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"nasi campur","harga":"10.000","stok":"15","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1Z-5FZr7f-nuM8kEnUvpnXhV8lZ0MIpGQ","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"b2e9e1c0-3f91-4c6a-8988-2169e9dac46f","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie pedas dower","harga":"8000","stok":"7","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1FnCfbnxo_vy88YleeLvy8KfO4eOGcNdk","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"b99b39ef-9f89-460b-a433-53c27f253e3a","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"MILO","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1mcd1mU2i2E6_HF-i315dhcj2LB2JdfGP","sekolah":"SMA HANG TUAH 2"},{"product_id":"c000f445-db57-41a8-9f84-00530151c262","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie fiery chicken","harga":"8000","stok":"5","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1zRK9zI7s1fGQ2N2cSkcrc91Hm5MNICDu","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"c10b59d6-4fc9-4f0c-87de-0affdc4caac9","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie kari mercon","harga":"8000","stok":"5","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=14NysoxpUSux4moLGu0Rk-N754uxPflS7","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"d273defe-2e15-44e6-884a-912eb5c7f147","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"Marimas chocopandan","harga":"4.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1ZOtl7q-6c3JoOVQiVY5qdnCEyVSbz0AI","sekolah":"SMA HANG TUAH 2"},{"product_id":"ea19b54b-59f3-432b-8c62-0eb5651c53c7","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" pop ice choco cookies","harga":"5.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=1bb07a15G7FGx9EAvcExljzVOPjen2f4D","sekolah":"SMA HANG TUAH 2"},{"product_id":"f21247db-aa5b-4831-b8ce-147fdf5d5ba4","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":"popmie goreng","harga":"8000","stok":"6","kategori":"makanan","foto_url":"https://drive.google.com/uc?id=1WRVY_sXVn--ikAOu8VvHKCcctsgSTLIE","sekolah":"SMA HANG TUAH 2 SIDOARJO"},{"product_id":"f9bea039-a19f-45fa-903a-cc590e63976b","mitra_id":"639aa95a-a97b-4e54-970b-6bd77a131405","nama_produk":" nutrisi sirsak ","harga":"4.000","stok":"24","kategori":"MINUMAN","foto_url":"https://drive.google.com/uc?id=16eHySkiK6qfXn9Oh-Qy1rXuENph7GW6z","sekolah":"SMA HANG TUAH 2"}];
+
+    viewMitraBtn.addEventListener('click', showMitraList);
+    viewProductsBtn.addEventListener('click', showProductList);
+
+    function showMitraList() {
+        content.innerHTML = '';
+        const wrapper = document.createElement('div');
+        wrapper.style.position = 'relative';
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.minHeight = '400px';
+        wrapper.style.maxHeight = '80vh';
+        wrapper.style.overflowY = 'auto';
+        wrapper.innerHTML = '<h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 40px;">Daftar Mitra</h2><div class="mitra-container"></div>';
+        content.appendChild(wrapper);
+        if (mitraData.length === 0) {
+            wrapper.querySelector('.mitra-container').innerHTML = '<p style="text-align: center; font-size: 1.5rem; color: #7f8c8d;">Loading...</p>';
+            return;
+        }
+        const container = wrapper.querySelector('.mitra-container');
+        mitraData.forEach(mitra => {
+            const card = document.createElement('div');
+            card.className = 'mitra-card';
+            const initials = mitra.owner_name ? mitra.owner_name.charAt(0).toUpperCase() : 'M';
+            card.innerHTML = `
+                <div class="mitra-avatar">${initials}</div>
+                <h3>${mitra.nama_mitra}</h3>
+                <div class="mitra-info">
+                    <p><strong>Owner:</strong> ${mitra.owner_name}</p>
+                    <p><strong>Email:</strong> ${mitra.email}</p>
+                    <p class="mitra-kategori"><strong>Kategori:</strong> ${mitra.kategori}</p>
+                </div>
+                <button class="mitra-detail-btn">Detail</button>
+            `;
+            const detailBtn = card.querySelector('.mitra-detail-btn');
+            detailBtn.addEventListener('click', () => showMitraDetail(mitra));
+            container.appendChild(card);
+        });
+    }
+
+    function showProductList() {
+        content.innerHTML = '';
+        const wrapper = document.createElement('div');
+        wrapper.style.position = 'relative';
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.minHeight = '400px';
+        wrapper.style.maxHeight = '80vh';
+        wrapper.style.overflowY = 'auto';
+
+        const h2 = document.createElement('h2');
+        h2.textContent = 'Daftar Produk';
+        wrapper.appendChild(h2);
+
+        const bgElements = ['🍕', '🍔', '🥤', '🍹', '☕'];
+        bgElements.forEach((emoji, index) => {
+            const bg = document.createElement('div');
+            bg.className = 'bg-element';
+            bg.textContent = emoji;
+            bg.style.left = (10 + index * 15) + '%';
+            bg.style.animationDelay = (index * 2) + 's';
+            wrapper.appendChild(bg);
+        });
+
+        if (productData.length === 0) {
+            const p = document.createElement('p');
+            p.textContent = 'Loading...';
+            wrapper.appendChild(p);
+        } else {
+            const container = document.createElement('div');
+            container.className = 'product-container';
+            productData.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <img src="${product.foto_url}" alt="${product.nama_produk}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+                    <h3>${product.nama_produk}</h3>
+                    <p><strong>Harga:</strong> Rp ${product.harga}</p>
+                    <p><strong>Stok:</strong> ${product.stok}</p>
+                    <p><strong>Kategori:</strong> ${product.kategori}</p>
+                    <button class="detail">Detail</button>
+                `;
+                const detailBtn = card.querySelector('.detail');
+                detailBtn.addEventListener('click', () => showProductDetail(product));
+                container.appendChild(card);
+            });
+            wrapper.appendChild(container);
+        }
+        content.appendChild(wrapper);
+    }
+
+    function showMitraDetail(mitra) {
+        const modal = document.createElement('div');
+        modal.className = 'mitra-modal';
+        modal.innerHTML = `
+            <div class="mitra-modal-content">
+                <button class="mitra-modal-close" onclick="this.closest('.mitra-modal').remove()">×</button>
+                <h2>Detail Mitra</h2>
+                <p><strong>Nama Mitra:</strong> ${mitra.nama_mitra}</p>
+                <p><strong>Owner:</strong> ${mitra.owner_name}</p>
+                <p><strong>Email:</strong> ${mitra.email}</p>
+                <p><strong>Alamat:</strong> ${mitra.alamat}</p>
+                <p><strong>Kategori:</strong> ${mitra.kategori}</p>
+                <p><strong>Sekolah:</strong> ${mitra.sekolah}</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        requestAnimationFrame(() => modal.classList.add('active'));
+        modal.querySelector('.mitra-modal-content').addEventListener('click', e => e.stopPropagation());
+        modal.addEventListener('click', () => modal.remove());
+    }
+
+    function showProductDetail(product) {
+        content.innerHTML = `
+            <h2>Detail Produk</h2>
+            <p><strong>Nama Produk:</strong> ${product.nama_produk}</p>
+            <p><strong>Harga:</strong> Rp ${product.harga}</p>
+            <p><strong>Stok:</strong> ${product.stok}</p>
+            <p><strong>Kategori:</strong> ${product.kategori}</p>
+            <p><strong>Sekolah:</strong> ${product.sekolah}</p>
+            <p><strong>Foto:</strong> <a href="${product.foto_url}" target="_blank">Lihat Foto</a></p>
+            <button class="back" onclick="location.reload()">Kembali</button>
+        `;
+    }
+});
